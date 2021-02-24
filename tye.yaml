@@ -1,0 +1,45 @@
+name: DaprPoc
+namespace: DaprPoc
+registry: vsimone67
+extensions:
+- name: dapr
+  components-path: "./components/"
+  config: 'appconfig'
+services:
+  - name: facservice
+    project: Fac.Service/Fac.Service.csproj
+    bindings:
+      - port: 5200
+  - name: mibprocessor
+    project: Mib.Processor/Mib.Processor.csproj
+    bindings:
+      - port: 5201
+  - name: mibhubprocessor
+    project: MibHub.Processor/MibHub.Processor.csproj
+    bindings:
+      - port: 5202
+  # - name: apigateway
+  #   project: ApiGateway/ApiGateway.csproj
+  #   bindings:
+  #     - port: 5103
+  # - name: authservice
+  #   project: Authentication.Service/Authentication.Service.csproj
+  #   bindings:
+  #     - port: 5104
+  # - name: correspondenceprocessor
+  #   project: Correspondence.Processor/Correspondence.Processor.csproj
+  #   bindings:
+  #     - port: 5105
+  # - name: casesprocessor
+  #   project: Case.Processor/Case.Processor.csproj
+  #   bindings:
+  #     - port: 5106
+  # # - name: reverseproxy
+  #   project: ReverseProxy/ReverseProxy.csproj
+  #   bindings:
+  #     - port: 5107
+  - name: queuetest
+    project: QueueTest/QueueTest.csproj
+    bindings:
+      - port: 5208
+  

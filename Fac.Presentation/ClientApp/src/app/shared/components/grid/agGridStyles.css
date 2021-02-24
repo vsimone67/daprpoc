@@ -1,0 +1,29 @@
+/* Global AG Grid */
+
+::ng-deep .ag-header-viewport {
+  background: #0e6a81 !important;
+  color: white;
+}
+
+::ng-deep .ag-header-cell-label {
+  color: white;
+  text-align: center;
+}
+::ng-deep .ag-cell {
+  color: #0e6a81 !important;
+  font-size: 13px;
+  text-align: center !important;
+}
+
+::ng-deep .ag-theme-alpine .ag-header-cell-resize::after {
+  height: 100%;
+  top: 0;
+}
+
+::ng-deep span.ag-header-cell-text {
+  width: 100%;
+}
+
+::ng-deep .ag-icon {
+  color: white !important;
+}

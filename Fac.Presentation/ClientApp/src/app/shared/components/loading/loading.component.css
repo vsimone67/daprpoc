@@ -1,0 +1,6 @@
+.loadingdiv{
+  z-index: 1000;
+  position: absolute;
+  margin-left: 25% !important;
+  margin-top: 30vh
+}

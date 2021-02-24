@@ -1,0 +1,60 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@environment/*": [
+        "src/environments/*"
+      ],
+      "@shared/*": [
+        "src/app/shared/*"
+      ],
+      "@shared/components*": [
+        "src/app/shared/components/*"
+      ],
+      "@shared/service/*": [
+        "src/app/shared/services/*"
+      ],
+      "@shared/module/*": [
+        "src/app/shared/*"
+      ],
+      "@auth/*": [
+        "src/app/auth/*"
+      ],
+      "@auth/components/*": [
+        "src/app/auth/components/*"
+      ],
+      "@auth/service/*": [
+        "src/app/auth/services/*"
+      ],
+      "@auth/models/*": [
+        "src/app/auth/models/*"
+      ],
+      "@validators/*": [
+        "src/app/validators/*"
+      ],
+      "@constants/*": [
+        "src/assets/constants/*"
+      ]
+    },
+    "module": "esnext",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ]
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  }
+}

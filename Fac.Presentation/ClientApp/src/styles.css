@@ -1,0 +1,419 @@
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-alpine.css";
+
+.card-header {
+  background-color: transparent; /* specify the alternate background-color */
+  width: 100%;
+  border: 0 !important;
+}
+
+.card {
+  border: 0 !important;
+}
+
+.jumbotron {
+  padding-bottom: 0%;
+  padding-top: 25px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Lato;
+}
+
+.vcontainer > div {
+  margin-left: 5px;
+  width: 99.5%;
+}
+
+.row-difference {
+  background-color: sandybrown !important;
+}
+
+.my-side {
+  height: 7vh;
+  background: linear-gradient(#00304c, #168b9f);
+}
+
+.logo {
+  height: 5vh;
+}
+
+.logoline {
+  height: 6vh;
+}
+
+.my-card {
+  padding-top: 10px;
+  width: 900px;
+}
+
+.content-data {
+  overflow: auto;
+  height: 90vh;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0e6a81;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.ag-header-viewport {
+  background: #0e6a81 !important;
+  color: white;
+}
+
+.ag-header-cell-label {
+  color: white;
+  text-align: center;
+}
+
+.ag-cell {
+  color: #0e6a81 !important;
+  font-size: 13px;
+  text-align: center !important;
+}
+
+.ag-theme-alpine .ag-header-cell-resize::after {
+  height: 100%;
+  top: 0;
+}
+
+span.ag-header-cell-text {
+  width: 100%;
+}
+
+.form-control,
+.form-control:focus {
+  border-color: #148398 !important;
+}
+
+/* Dialog header */
+.ui-dialog-titlebar {
+  background-color: #e5ebef !important;
+  color: #0e6a81 !important;
+  text-align: center;
+}
+
+.node text {
+  fill: #ffffff !important;
+}
+
+.ui-togglebutton:not(.ui-state-disabled):not(.ui-state-active).ui-state-focus {
+  box-shadow: 0 0 0 !important;
+}
+
+.ag-icon {
+  color: white !important;
+}
+
+.ui-multiselect .ui-multiselect-trigger {
+  display: none !important;
+}
+
+.ui-multiselect {
+  border-radius: 4px !important;
+  border: 1px solid #0e6a81 !important;
+  margin-left: 1% !important;
+}
+
+.ui-multiselect .ui-multiselect-label {
+  width: 100%;
+  padding-right: 5px !important;
+  color: #0e6a81 !important;
+}
+
+.ui-multiselect .ui-multiselect-label-container {
+  width: 100%;
+}
+
+.ui-multiselect-panel
+  .ui-multiselect-items
+  .ui-multiselect-item.ui-state-highlight {
+  color: #0e6a81 !important;
+  background-color: transparent !important;
+}
+
+.ui-chkbox .ui-chkbox-box.ui-state-active {
+  border-color: #0e6a81 !important;
+  background-color: transparent !important;
+  color: #0e6a81 !important;
+}
+
+.ui-multiselect-panel .ui-multiselect-items .ui-multiselect-item:hover {
+  color: #0e6a81 !important;
+  background-color: transparent !important;
+  font-weight: 600 !important;
+}
+
+.label-multi {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  font-size: 12px;
+  float: right;
+  margin-top: 4px;
+}
+
+.ui-multiselect .ui-multiselect-panel {
+  max-width: 13em;
+}
+
+.ui-multiselect-panel
+  .ui-multiselect-header
+  .ui-multiselect-filter-container
+  .ui-multiselect-filter-icon {
+  color: #0e6a81;
+}
+
+.ui-inputtext:enabled:focus:not(.ui-state-error) {
+  box-shadow: 0 0 0 0 !important;
+  border-color: #0e6a81 !important;
+}
+
+.ui-multiselect-panel
+  .ui-multiselect-header
+  .ui-multiselect-filter-container
+  .ui-multiselect-filter-icon {
+  color: #0e6a81 !important;
+}
+
+/* tabl view background color */
+body .ui-tabview.ui-tabview-top .ui-tabview-nav li.ui-state-active,
+body .ui-tabview.ui-tabview-bottom .ui-tabview-nav li.ui-state-active,
+body .ui-tabview.ui-tabview-left .ui-tabview-nav li.ui-state-active,
+body .ui-tabview.ui-tabview-right .ui-tabview-nav li.ui-state-active {
+  background: #0e6a81 !important;
+}
+
+/* Format all text */
+input[type="text"] {
+  border: 0;
+  border-bottom: 2px solid #3cbabe;
+  outline: 0;
+  border-radius: 0;
+}
+
+/* make PrimeNG spinner overlay on top center */
+.ui-progress-spinner {
+  position: absolute;
+  z-index: 1000;
+  margin-left: 50%;
+  margin-right: 50%;
+  margin-top: 7%;
+}
+
+/* center vertically */
+.center-vertical {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* color the menu bar */
+body .ui-menubar {
+  background: transparent;
+  color: white !important;
+  border: none;
+}
+
+/* color menu text */
+body .ui-menubar .ui-menuitem-link .ui-menuitem-text {
+  color: white !important;
+}
+
+/* color the sub menu icon */
+.ui-menubar
+  .ui-menubar-root-list
+  > .ui-menuitem
+  > .ui-menuitem-link
+  > .ui-submenu-icon {
+  color: white;
+}
+
+/* color the sub menu background */
+body .ui-menubar .ui-submenu-list {
+  background: linear-gradient(#00304c, #168b9f);
+}
+
+/* color the sub menu hightlight  */
+body .ui-menubar .ui-menuitem.ui-menuitem-active > .ui-menuitem-link {
+  background: linear-gradient(#00304c, #168b9f);
+}
+
+/* Set menu text */
+body .ui-menubar .ui-menuitem-link .ui-menuitem-text {
+  color: white !important;
+}
+
+/* color for mouse hover over the menu */
+.ui-menubar .ui-menuitem .ui-menuitem-link:hover {
+  background-color: #5393bc;
+}
+
+/* All buttons will have green background and white text */
+.ui-button {
+  background-color: #168b9f !important;
+  color: white;
+  border: 1px solid #168b9f !important;
+  border-radius: 8px !important;
+}
+.cleardata {
+  color: #168b9f !important;
+  background-color: white !important;
+  border: 1px solid #168b9f !important;
+  border-radius: 8px !important;
+}
+
+/* Change background color of iccon buttons to white */
+.ui-button-icon-only .ui-button-icon-left {
+  color: white;
+}
+
+/* Change color of all labels */
+label {
+  font-weight: 500;
+  color: #0e7193;
+}
+
+/* Next few are for the drop downs, constant color and just a border at the bottom */
+.ui-dropdown {
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-radius: 0 !important;
+  border-bottom: 2px solid #3cbabe !important;
+}
+
+/* change color of the dropdown text */
+body .ui-dropdown .ui-dropdown-panel .ui-dropdown-item {
+  color: #0e6a81 !important;
+}
+
+/* dropodown hightighted row */
+body .ui-dropdown-panel .ui-dropdown-items .ui-dropdown-item.ui-state-highlight,
+body
+  .ui-dropdown-panel
+  .ui-dropdown-items
+  .ui-dropdown-item-group.ui-state-highlight {
+  background-color: lightgray;
+}
+
+.ui-state-focus {
+  box-shadow: 0 0 0 !important;
+}
+
+.ui-dropdown .ui-dropdown-trigger {
+  color: #3cbabe !important;
+  height: 95%;
+}
+
+.ui-dropdown .ui-dropdown-clear-icon {
+  color: #17a2b8 !important;
+}
+
+/* Colors for accordian */
+body
+  .ui-accordion
+  .ui-accordion-header:not(.ui-state-disabled).ui-state-active
+  a {
+  background-color: #0e6a81 !important;
+  border: 1px solid #0e6a81 !important;
+  color: #ffffff;
+}
+
+body .ui-accordion .ui-accordion-header a {
+  padding: 0.571em 1em;
+  border: 1px solid #0e6a81 !important;
+  color: white;
+  background-color: #0e6a81 !important;
+  color: white;
+  font-weight: 700;
+  border-radius: 3px;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+/* Tab View Styles */
+.tabClaims .ui-tabview.ui-tabview-top .ui-tabview-nav li,
+.tabClaims .ui-tabview.ui-tabview-top .ui-tabview-nav li.ui-state-active {
+  background: transparent !important;
+  margin: 0;
+  border: none;
+}
+
+.tabClaims .ui-tabview.ui-tabview-top .ui-tabview-nav li.ui-state-active a,
+.tabClaims
+  .ui-tabview.ui-tabview-top
+  .ui-tabview-nav
+  li.ui-state-active:hover
+  a {
+  color: #0e6a81;
+}
+.tabClaims .ui-tabview.ui-tabview-top .ui-tabview-nav li:hover {
+  border: none !important;
+  background: #0e6a814d !important;
+}
+/*Menu Styling */
+.menuItems .ui-menubar .ui-menuitem-link .ui-menuitem-text {
+  color: black !important;
+}
+.menuItems .ui-menubar {
+  width: 100%;
+  height: 40px;
+  border-radius: 0;
+  border-bottom: 1px solid #c8c8c8;
+}
+body .ui-breadcrumb {
+  border-right: none;
+  height: 40px;
+  border-radius: 0;
+}
+.menuItems .ui-menubar .ui-menubar-root-list {
+  float: right;
+}
+.menuItems .ui-menubar .ui-menuitem .ui-menuitem-link:hover {
+  background: transparent;
+}
+.menuItems .ui-menubar .ui-menuitem .ui-menuitem-link:hover span,
+.menuItems .ui-menubar .ui-menuitem .ui-menuitem-link:hover .ui-menuitem-text {
+  color: #148398 !important;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.filterLabel {
+  color: #148398 !important;
+  font-weight: 600;
+  font-size: 14px;
+}
+.iconHide {
+  font-size: 19px !important;
+  color: #0e6a81;
+  font-weight: 700;
+}
+.log-card {
+  width: 95%;
+}
+.log .ui-card.ui-widget.ui-widget-content.ui-corner-all {
+  border-radius: 0;
+}
+.spanText {
+  color: #000;
+  font-weight: 600;
+}
+.dateCalendar .ui-inputtext {
+  height: 25px !important;
+}
+.ag-icon-tree-open,
+.ag-icon-tree-closed {
+  color: #148398 !important;
+}

@@ -1,0 +1,9 @@
+<div [ngStyle]="gridContainerStyle">
+
+  <ag-grid-angular style="{{GridCssStyle}}"
+                   class="{{GridCssClass}}"
+                   [rowData]="RowData"
+                   [gridOptions]="currentGridOptons"
+                   (gridReady)="onGridReady($event)"
+                   [columnDefs]="ColumnDefs"></ag-grid-angular>
+</div>

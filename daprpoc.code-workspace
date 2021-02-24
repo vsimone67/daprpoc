@@ -1,0 +1,23 @@
+{
+  "folders": [
+    {
+      "path": "Fac.Service"
+    },
+    {
+      "path": "Mib.Processor"
+    },
+    {
+      "path": "MibHub.Processor"
+    },
+    {
+      "path": "DaprPocCommon"
+    },
+    {
+      "path": "Fac.Presentation"
+    },
+    {
+      "path": "QueueTest"
+    }
+  ],
+  "settings": {}
+}

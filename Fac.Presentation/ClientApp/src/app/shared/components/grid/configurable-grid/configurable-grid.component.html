@@ -1,0 +1,38 @@
+<div class="col-12 mt-3"
+     *ngIf="!loading">
+  <p-toggleButton [offLabel]="'Show '+ buttonText"
+                  [onLabel]="'Hide '+ buttonText"
+                  onIcon="pi pi-eye-slash"
+                  offIcon="pi pi-eye"
+                  [styleClass]="'px-auto show-btn'"
+                  (ngModelChange)="updateVisible($event)"
+                  [ngModel]="visible"
+                  *ngIf="showHideButton"></p-toggleButton>
+  <p-multiSelect [options]="listeCols"
+                 [(ngModel)]="colsShown"
+                 [filter]="true"
+                 class="multihide"
+                 (ngModelChange)="updateCols()"
+                 [style]="{width: '285px', float:'right'}">
+    <ng-template let-column
+                 pTemplate="item">
+      <div class=" label-multi col-9 px-0">{{column.label}}</div>
+    </ng-template>
+    <ng-template let-value
+                 pTemplate="selectedItems">
+
+      <span class="ui-multiselected-empty-token ui-corner-all">Show / Hide Columns</span>
+    </ng-template>
+  </p-multiSelect>
+  <div [ngStyle]="GridStyle"
+       class="mt-2">
+    <ag-grid-angular style="width: 100%; height: calc(100% - 25px);"
+                     class="ag-theme-alpine"
+                     [rowData]="appliedRowData"
+                     [gridOptions]="currentGridOptons"
+                     [rowClassRules]="RowClassRules"
+                     (gridReady)="onGridReady($event)"
+                     (displayedColumnsChanged)="changeCols($event)"
+                     [columnDefs]="appliedCols"></ag-grid-angular>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+rm application/commands/*
+rm application/controllers/*
+rm application/dto/*
+rm application/queries/*
+rm Components/*
+rm domain/entities/*
+rm infrastructure/*
+rm persistence/context/*
+rm persistence/dbservice/*
+rm readme.txt
