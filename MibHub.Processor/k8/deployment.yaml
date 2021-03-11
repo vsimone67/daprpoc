@@ -1,0 +1,79 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mibhubprocessor
+  namespace: daprpoc
+spec:
+  selector:
+    matchLabels:
+      app: mibhubprocessor
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mibhubprocessor
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "mibhubprocessor"
+        dapr.io/app-port: "80"
+        dapr.io/config: "appconfig"
+    spec:
+      containers:
+        - name: mibhubprocessor-pod
+          image: vsimone67/mibhubprocessor:latest
+          imagePullPolicy: 'Always'
+          ports:
+            - name: http
+              containerPort: 80
+          env:
+            - name: 'appdirectory'
+              value: '/app/settings/'
+          volumeMounts:
+            - name: configs
+              mountPath: '/app/settings'
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 360
+      volumes:
+        - name: configs
+          projected:
+            sources:
+              - configMap:
+                  name: appsettings-mibhubprocessor
+              - secret:
+                  name: appsettings-secret-mibhubprocessor
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mibhubprocessor-svc
+  namespace: daprpoc
+spec:
+  ports:
+    - name: web
+      port: 80
+  selector:
+    app: mibhubprocessor
+---
+kind: IngressRoute
+apiVersion: traefik.containo.us/v1alpha1
+metadata:
+  name: mibhubprocessor-route
+  namespace: daprpoc
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.tls: "true"
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: PathPrefix(`/mibhub`)
+      kind: Rule
+      services:
+        - name: mibhubprocessor-svc
+          port: 80
+
+  

@@ -24,7 +24,7 @@ namespace QueueTest
 
                 Log.Logger = new LoggerConfiguration()
                     .ReadFrom.Configuration(configuration)
-                    .MinimumLevel.ControlledBy(LevelSwitch)
+                    //.MinimumLevel.ControlledBy(LevelSwitch)
                     .CreateLogger();
 
                 CreateHostBuilder(args).Build().Run();

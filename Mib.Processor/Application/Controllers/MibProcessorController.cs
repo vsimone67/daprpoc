@@ -10,7 +10,7 @@ using DaprPoc.Common.Dto;
 
 namespace Mib.Processor.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class MibProcessorController : ControllerBase
     {
@@ -23,8 +23,8 @@ namespace Mib.Processor.Controllers
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
-        [Topic("FacService", "FacSendMib")]
-        [HttpPost("SubmitMib")]
+        [Topic("facservice", "facsendmib")]
+        [HttpPost("facsendmib")]
         public async Task<IActionResult> SubmitMib([FromBody] MibSubmitted mib, [FromServices] DaprClient daprClient)
         {
             _logger.LogDebug($"MibProcessor => Processing MIB for Case {mib.FacCase.CaseNumber}");
@@ -33,6 +33,14 @@ namespace Mib.Processor.Controllers
             _logger.LogDebug("MibProcessor => MIB has been processed");
 
             return Ok();
+        }
+
+        [HttpGet]
+        [Route("Test")]
+        public async Task<IActionResult> Test() 
+        {
+            await Task.FromResult(1);
+            return Ok("Hello World From MIB Processor");
         }
     }
 

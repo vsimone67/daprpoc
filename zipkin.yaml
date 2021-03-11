@@ -1,0 +1,13 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: zipkin
+  namespace: daprpoc
+spec:
+  type: exporters.zipkin
+  version: v1
+  metadata:
+  - name: enabled
+    value: "true"
+  - name: exporterAddress
+    value: http://192.168.86.183:9411/api/v2/spans

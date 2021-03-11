@@ -1,3 +1,7 @@
+using System.Diagnostics.Tracing;
+using System.Runtime.CompilerServices;
+using System.Net.Http.Headers;
+using System.Net.Http;
 using System;
 using System.Threading.Tasks;
 using DaprPoc.Common.Dto;
@@ -9,7 +13,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Fac.Service.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class FacController : ControllerBase
     {
@@ -50,6 +54,14 @@ namespace Fac.Service.Controllers
             var data = await _mediator.Send(new SubmitCaseCommand() { CaseToSubmit = caseToSubmit });
             _logger.LogDebug("FacService => Case has been sumbitted");
             return Ok(data);
+        }
+
+        [HttpGet]
+        [Route("Test")]
+        public async Task<IActionResult> Test() 
+        {
+            await Task.FromResult(1);
+            return Ok("Hello World");
         }
     }
 }

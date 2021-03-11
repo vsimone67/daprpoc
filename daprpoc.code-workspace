@@ -17,6 +17,9 @@
     },
     {
       "path": "QueueTest"
+    },
+    {
+      "path": "Components"
     }
   ],
   "settings": {}

@@ -70,7 +70,7 @@ namespace QueueTest.Extensions
                     logger.LogDebug("Queue Test => Mib Has been completed");
                     await Task.FromResult(1);
                     context.Response.StatusCode = 200;
-                }).WithTopic("MibProcessor", "MibCompleted");
+                }).WithTopic("mibprocessor", "mibcompleted");
 
 
             });

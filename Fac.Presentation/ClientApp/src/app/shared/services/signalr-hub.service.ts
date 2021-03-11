@@ -49,6 +49,9 @@ export class SignalrHubService {
     return this._isConnected;
   }
 
+  public get ConnectionId(): string {
+    return this.ConnectionId;
+  }
   public InvokeHubMethod(method: string, data: any): void {
     if (this._isConnected) {
       this._hubConnection.invoke(method, data);

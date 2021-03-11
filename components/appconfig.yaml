@@ -2,9 +2,9 @@ apiVersion: dapr.io/v1alpha1
 kind: Configuration
 metadata:
   name: appconfig
-  namespace: default
+  namespace: daprpoc
 spec:
   tracing:
     samplingRate: "1"
-+   zipkin:
-+     endpointAddress: "http://192.168.86.183:9411/api/v2/spans"
+    zipkin:
+      endpointAddress: "http://192.168.86.183:9411/api/v2/spans"

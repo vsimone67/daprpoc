@@ -9,20 +9,20 @@ using DaprPoc.Common.Dto;
 
 namespace MibHub.Processor.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
-    public class MibHubController : ControllerBase
+    public class MibHubProcessorController : ControllerBase
     {
         private readonly IMediator _mediator;
-        private readonly ILogger<MibHubController> _logger;
+        private readonly ILogger<MibHubProcessorController> _logger;
 
-        public MibHubController(IMediator mediator, ILogger<MibHubController> logger)
+        public MibHubProcessorController(IMediator mediator, ILogger<MibHubProcessorController> logger)
         {
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
-        [Topic("MibProcessor", "MibCompleted")]
+        [Topic("mibprocessor", "mibcompleted")]
         [HttpPost("MibCompleted")]
         public async Task<IActionResult> MibCompleted([FromBody] MibCompleted mib)
         {

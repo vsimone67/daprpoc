@@ -16,6 +16,7 @@ namespace Fac.Service
         {
             try
             {
+                
                 var basePath = Environment.GetEnvironmentVariable("appdirectory").NullToEmpty();
 
                 var configuration = new ConfigurationBuilder()
@@ -24,7 +25,7 @@ namespace Fac.Service
 
                 Log.Logger = new LoggerConfiguration()
                     .ReadFrom.Configuration(configuration)
-                    .MinimumLevel.ControlledBy(LevelSwitch)
+                    //.MinimumLevel.ControlledBy(LevelSwitch)
                     .CreateLogger();
 
                 CreateHostBuilder(args).Build().Run();

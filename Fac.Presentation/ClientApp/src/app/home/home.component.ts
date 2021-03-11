@@ -36,18 +36,14 @@ export class HomeComponent implements OnInit {
   }
 
   async CreateMibConnection() {
-    //this._mibConnection.URL = `${environment.apiGatewayUrl}/mibhub`
-    this._mibConnection.URL = `http://localhost:5202/mibhub`
+    this._mibConnection.URL = `${environment.apiGatewayUrl}/mibhub`
+    //this._mibConnection.URL = `http://localhost:5202/mibhub`
 
     await this._mibConnection.Connect();
 
     if (this._mibConnection.IsConnected) {
       this.RegisterMibEvents();
 
-      this._mibConnection.Hub.invoke("GetConnectionId").then((data) => {
-                  this._connectionId = data;
-        }
-    );
     }
   }
 
@@ -109,7 +105,7 @@ export class HomeComponent implements OnInit {
 
   async CreateRetroConnection() {
      //this._retroConnection.URL = `${environment.apiGatewayUrl}/facdecision`
-     this._retroConnection.URL = `http://localhost:4500/retrohub`;
+     this._retroConnection.URL = `${environment.apiGatewayUrl}/retrohub`;
     await this._retroConnection.Connect();
 
     if (this._retroConnection.IsConnected) {
@@ -140,13 +136,7 @@ export class HomeComponent implements OnInit {
   }
 
   generateSplit() {
-      var splitInfo = <NaarSplitGenerateInfo>{cessionId: "12345", asOfDate: new Date()};
-
-      this._retroConnection.Hub.invoke("GetConnectionId").then((data) => {
-                  console.log(data);
-
-        }
-    );
+      var splitInfo = <NaarSplitGenerateInfo>{cessionId: "12345", asOfDate: new Date(), connectionId: this._retroConnection.ConnectionId};
 
 
       this._retroConnection.InvokeHubMethod("GenerateNaarSplit",splitInfo);
@@ -166,7 +156,7 @@ export class HomeComponent implements OnInit {
     };
 
 
-     this._httpService.postData(`http://localhost:5200/api/fac/submitMib`,mibSubmitted);
+     this._httpService.postData(`${environment.apiGatewayUrl}/fac/submitMib`,mibSubmitted);
     this.messageService.add({
       severity: "info",
       summary: "Mib Submitted",

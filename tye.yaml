@@ -1,5 +1,5 @@
-name: DaprPoc
-namespace: DaprPoc
+name: daprpoc
+namespace: daprpoc
 registry: vsimone67
 extensions:
 - name: dapr

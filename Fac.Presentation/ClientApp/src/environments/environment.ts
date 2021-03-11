@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  apiGatewayUrl: "http://traefik.prod"
-
+  apiGatewayUrl: "http://traefik.kraken"
 };
 
 /*
